@@ -1,4 +1,4 @@
-package com.example.Android_project;
+package com.example.sqlproject1;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sqlproject1.R;
 
 import java.util.ArrayList;
 

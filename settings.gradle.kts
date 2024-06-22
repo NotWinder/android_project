@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SQLproject1"
+rootProject.name = "Android_project"
 include(":app")
  

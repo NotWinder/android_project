@@ -1,4 +1,4 @@
-package com.example.Android_project;
+package com.example.sqlproject1;
 
 import org.junit.Test;
 

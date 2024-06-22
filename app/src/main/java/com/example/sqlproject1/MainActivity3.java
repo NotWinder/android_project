@@ -1,4 +1,4 @@
-package com.example.Android_project;
+package com.example.sqlproject1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.sqlproject1.R;
 
 public class MainActivity3 extends AppCompatActivity {
 

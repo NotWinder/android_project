@@ -1,4 +1,4 @@
-package com.example.Android_project;
+package com.example.sqlproject1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.sqlproject1.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;

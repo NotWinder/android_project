@@ -1,12 +1,13 @@
 package com.example.sqlproject1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.sqlproject1.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Objects;
@@ -37,6 +38,8 @@ public class MainActivity2 extends AppCompatActivity {
             } else {
                 if (rowId != -1) { // Check if row ID is not -1 (insertion successful)
                     Toast.makeText(MainActivity2.this, "Save Contact", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity2.this , MainActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity2.this, "Exists Contact", Toast.LENGTH_SHORT).show();
                 }

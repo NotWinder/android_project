@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.sqlproject1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
@@ -46,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         displaydata();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Clear the existing data
+        unames.clear();
+        unumbers.clear();
+        ids.clear();
+        // Refresh the data
+        displaydata();
+        // Notify the adapter of data changes
+        myAdapter.notifyDataSetChanged();
+    }
+
     private void displaydata() {
         Cursor cursor = dbh.getdata();
         if (cursor.getCount() == -1){
@@ -57,6 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 unumbers.add(cursor.getString(2));
             }
         }
-        myAdapter.notifyDataSetChanged();
+        cursor.close();
     }
 }

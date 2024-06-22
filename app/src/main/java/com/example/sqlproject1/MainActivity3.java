@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.sqlproject1.R;
-
 public class MainActivity3 extends AppCompatActivity {
 
     EditText name, phone;
@@ -38,6 +36,8 @@ public class MainActivity3 extends AppCompatActivity {
                 boolean status = db.deletedata(contactId); // Use the ID for deletion
                 if (status) {
                     Toast.makeText(MainActivity3.this, "Contact Deleted", Toast.LENGTH_SHORT).show();
+                    Intent intent3 = new Intent(MainActivity3.this , MainActivity.class);
+                    startActivity(intent3);
                 } else {
                     Toast.makeText(MainActivity3.this, "Deletion Failed", Toast.LENGTH_SHORT).show();
                 }
@@ -53,6 +53,8 @@ public class MainActivity3 extends AppCompatActivity {
                 boolean status = db.updatedata(contactId, contactName, contactPhone); // Use the ID for update
                 if (status) {
                     Toast.makeText(MainActivity3.this, "Contact Updated", Toast.LENGTH_SHORT).show();
+                    Intent intent3 = new Intent(MainActivity3.this , MainActivity.class);
+                    startActivity(intent3);
                 } else {
                     Toast.makeText(MainActivity3.this, "Update Failed", Toast.LENGTH_SHORT).show();
                 }

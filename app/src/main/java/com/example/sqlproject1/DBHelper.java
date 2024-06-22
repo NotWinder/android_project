@@ -22,7 +22,19 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists Contacts");
     }
 
+    public boolean userExists(String name, String contact) {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        String query = "SELECT * FROM Contacts WHERE name = ? AND contact = ?";
+        Cursor cursor = sqLiteDatabase.rawQuery(query, new String[]{name, contact});
+        boolean exists = (cursor.getCount() > 0);
+        cursor.close();
+        return exists;
+    }
+
     public long saveuserdata(String name, String contact) {
+        if (userExists(name, contact)) {
+            return -1; // Indicate that the user already exists
+        }
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
